@@ -11,36 +11,26 @@
             margin: 0;
             padding: 20px;
         }
+        h1 {
+            text-align: center;
+        }
         .selector-container {
             display: flex;
-            flex-direction: column;
-            width: 200px;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 8px;
+            justify-content: center;
             margin-bottom: 20px;
         }
         .option {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .option:last-child {
-            border-bottom: none;
-        }
-        .option:hover {
-            background-color: #ddd;
-        }
-        .option input {
-            margin-right: 10px;
+            margin: 0 10px;
         }
         .warning {
             color: red;
             font-weight: bold;
+            text-align: center;
             margin-bottom: 20px;
         }
         .script-list {
-            margin-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .script {
             background-color: #ffffff;
@@ -48,6 +38,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
+            position: relative;
         }
         .copy-button {
             background-color: #4CAF50;
@@ -56,6 +47,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
         }
         .copy-button:hover {
             background-color: #45a049;
@@ -81,16 +75,16 @@
 
 <div class="script-list">
     <div class="script">
-        <h3>Script Name 1</h3>
-        <p>Description of Script 1.</p>
-        <button class="copy-button" onclick="copyToClipboard('Script Code 1')">Copy</button>
+        <h3>Placeholder Script Name 1</h3>
+        <p>This is a description of Placeholder Script 1.</p>
+        <button class="copy-button" onclick="copyToClipboard('Placeholder Script Code 1')">Copy</button>
     </div>
     <div class="script">
-        <h3>Script Name 2</h3>
-        <p>Description of Script 2.</p>
-        <button class="copy-button" onclick="copyToClipboard('Script Code 2')">Copy</button>
+        <h3>Placeholder Script Name 2</h3>
+        <p>This is a description of Placeholder Script 2.</p>
+        <button class="copy-button" onclick="copyToClipboard('Placeholder Script Code 2')">Copy</button>
     </div>
-    <!-- Add more scripts here -->
+    <!-- Add more placeholder scripts as needed -->
 </div>
 
 <script>
