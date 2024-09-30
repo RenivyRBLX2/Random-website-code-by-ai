@@ -3,103 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure Awaits</title>
+    <title>RSblox - Script Repository</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .destination {
-            background: #ffffff;
-            border-radius: 5px;
             padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        footer {
-            background: #35424a;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        .selector-container {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .option {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .option:last-child {
+            border-bottom: none;
+        }
+        .option:hover {
+            background-color: #ddd;
+        }
+        .option input {
+            margin-right: 10px;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .script-list {
+            margin-top: 20px;
+        }
+        .script {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .copy-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Adventure Awaits</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<h1>RSblox - Script Repository</h1>
 
-<div class="container">
-    <section id="home">
-        <h2>Welcome to Adventure Awaits!</h2>
-        <p>Your journey to explore the world's most breathtaking destinations begins here. Join us as we uncover hidden gems and popular spots around the globe.</p>
-    </section>
-
-    <section id="destinations">
-        <h2>Featured Destinations</h2>
-
-        <div class="destination">
-            <h3>Bali, Indonesia</h3>
-            <p>Experience the serene beaches and vibrant culture of Bali. A perfect getaway for relaxation and adventure.</p>
-        </div>
-
-        <div class="destination">
-            <h3>Paris, France</h3>
-            <p>Explore the romantic streets of Paris, visit iconic landmarks like the Eiffel Tower, and indulge in exquisite cuisine.</p>
-        </div>
-
-        <div class="destination">
-            <h3>Machu Picchu, Peru</h3>
-            <p>Discover the ancient Incan city of Machu Picchu nestled high in the Andes mountains—a must-see for history buffs.</p>
-        </div>
-
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At Adventure Awaits, we are passionate about travel and helping you discover new places. Our team of travel enthusiasts curates unique experiences tailored just for you.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance planning your next adventure, feel free to reach out!</p>
-    </section>
+<div class="selector-container">
+    <div class="option">
+        <input type="radio" id="latest" name="scriptType" checked>
+        <label for="latest">Latest Scripts</label>
+    </div>
+    <div class="option">
+        <input type="radio" id="old" name="scriptType">
+        <label for="old">Old Scripts</label>
+    </div>
 </div>
 
-<footer>
-    &copy; 2024 Adventure Awaits. All Rights Reserved.
-</footer>
+<div class="warning">Warning!: Those scripts are connected on Scriptblox.com!</div>
+
+<div class="script-list">
+    <div class="script">
+        <h3>Script Name 1</h3>
+        <p>Description of Script 1.</p>
+        <button class="copy-button" onclick="copyToClipboard('Script Code 1')">Copy</button>
+    </div>
+    <div class="script">
+        <h3>Script Name 2</h3>
+        <p>Description of Script 2.</p>
+        <button class="copy-button" onclick="copyToClipboard('Script Code 2')">Copy</button>
+    </div>
+    <!-- Add more scripts here -->
+</div>
+
+<script>
+    function copyToClipboard(text) {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Script copied to clipboard!");
+    }
+</script>
 
 </body>
 </html>
