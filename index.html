@@ -3,95 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSblox - Script Repository</title>
+    <title>UTG - GAME ENHANCER</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .selector-container {
+            background-color: #000;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        .option {
-            margin: 0 10px;
-        }
-        .warning {
-            color: red;
-            font-weight: bold;
+
+        .container {
             text-align: center;
+        }
+        
+        .title {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 10px white;
             margin-bottom: 20px;
         }
-        .script-list {
-            max-width: 600px;
-            margin: 0 auto;
+
+        .copy-button {
+            background-color: #000;
+            border: 2px solid red;
+            color: red;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.2s;
         }
-        .script {
-            background-color: #ffffff;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
+
+        .copy-button:hover {
+            box-shadow: 0 0 10px red;
+        }
+
+        .copy-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Notification Styles */
+        .notify {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: rgb(240, 240, 240);
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(240, 240, 240, 0.5);
+            font-size: 16px;
+            transition: opacity 0.3s ease;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hide footer on PC */
+        @media screen and (min-width: 769px) {
+            .footer {
+                display: none;
+            }
         }
     </style>
-    <!-- Include external scripts -->
-    <script src="https://rscripts.net/path/to/your/script1.js"></script>
-    <script src="https://rscripts.net/path/to/your/script2.js"></script>
 </head>
 <body>
-
-<h1>Welcome to RSblox - Script Repository</h1>
-
-<div class="selector-container">
-    <div class="option">
-        <label for="category">Select Category:</label>
-        <select id="category">
-            <option value="all">All Scripts</option>
-            <option value="game">Game Scripts</option>
-            <option value="utility">Utility Scripts</option>
-        </select>
-    </div>
-</div>
-
-<div class="warning">
-    Please use scripts responsibly and ensure they comply with all relevant guidelines.
-</div>
-
-<div class="script-list">
-    <div class="script">
-        <h3>Speed Boost Script</h3>
-        <p>This script gives players a speed boost in the game.</p>
-        <a href="https://www.roblox.com/library/123456789/Speed-Boost-Script" target="_blank">View Script</a>
+    <div class="container">
+        <div class="title">UTG - Game Enhancer</div>
+        <button class="copy-button" onclick="copyText()">Copy epic UTG script</button>
     </div>
 
-    <div class="script">
-        <h3>Infinite Jump Script</h3>
-        <p>This script allows players to jump infinitely.</p>
-        <a href="https://www.roblox.com/library/987654321/Infinite-Jump-Script" target="_blank">View Script</a>
-    </div>
+    <!-- Notification -->
+    <div id="notify" class="notify">Script copied! Now get tf out</div>
 
-    <div class="script">
-        <h3>Teleportation Script</h3>
-        <p>This script allows players to teleport to specified locations.</p>
-        <a href="https://www.roblox.com/library/1122334455/Teleportation-Script" target="_blank">View Script</a>
-    </div>
+    <!-- Footer (Visible on Mobile Only) -->
+    <div class="footer">© UTG Game Enhancer | All Rights Reserved</div>
 
-    <!-- Add more scripts as needed -->
-    
-</div>
+    <script>
+        function copyText() {
+            // Create a dummy input to copy the text from
+            const dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.setAttribute("value", 'loadstring(game:HttpGet("https://pastebin.com/raw/8Z1LC7sE"))()');
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
 
-<footer style="text-align:center; margin-top:20px;">
-    &copy; 2024 RSblox. All Rights Reserved.
-</footer>
-
-<!-- Include additional scripts if necessary -->
-<script src="https://rscripts.net/path/to/your/script3.js"></script>
-
+            // Show custom notification
+            const notify = document.getElementById("notify");
+            notify.classList.add("show");
+            
+            // Hide notification after 2 seconds
+            setTimeout(() => {
+                notify.classList.remove("show");
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
